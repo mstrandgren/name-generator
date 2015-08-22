@@ -1,0 +1,35 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "grunt-connect-rewrite": "^0.2.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "bower": "*",
+    "bower-config": "*",
+    "coffee-react": "*",
+    "coffee-reactify": "*",
+    "coffee-script": "*",
+    "coffeeify": "*",
+    "connect": "*",
+    "grunt-browserify": "*",
+    "grunt-cache-bust": "*",
+    "grunt-cli": "*",
+    "grunt-connect-proxy": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "^0.8.1",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-manifest": "*",
+    "grunt-s3": "*",
+    "load-grunt-tasks": "*",
+    "time-grunt": "*"
+  }
+}

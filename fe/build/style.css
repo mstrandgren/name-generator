@@ -1,0 +1,13 @@
+.hidden {
+  display: none !important;
+}
+* {
+  -webkit-touch-callout: none !important;
+}
+body {
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+  margin: auto;
+  background: white;
+  overflow: hidden;
+}

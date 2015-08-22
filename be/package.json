@@ -1,0 +1,21 @@
+{
+  "name": "namegen",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "coffee-script": "^1.9.x",
+    "connect": "^3.4.0",
+    "express": "^4.13.3",
+    "http": "0.0.0",
+    "https": "~1.0.0",
+    "lodash": "^3.10.1",
+    "node-whois": "^2.1.2",
+    "promise": "^7.0.4",
+    "proxywrap": "^0.2.0",
+    "ws": "^0.7.2",
+    "wss": "0.0.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
