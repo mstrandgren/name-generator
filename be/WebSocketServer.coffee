@@ -12,9 +12,16 @@ proxiedHttp = require('proxywrap').proxy(http, strict: false)
 
 MAX_CONNECTIONS = 1000
 
-start = ({port, httpsPort, onConnect, onMessage, onClose, webServer}) ->
+start = ({port, httpsPort, onConnect, onMessage, onClose, webServer, cors}) ->
 
 	app = require('express')()
+
+	if cors
+		app.use (req, res, next) ->
+		  res.header("Access-Control-Allow-Origin", "*")
+		  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+		  next()
+
 
 	port ?= 9000
 	httpsPort ?= port + 43

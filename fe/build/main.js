@@ -222,22 +222,38 @@ module.exports = {
 
 
 },{}],2:[function(require,module,exports){
-var API_URL, Ajax, refresh;
+var $, API_URL, Ajax, _el, generateName, refresh;
 
 Ajax = require('./Ajax.coffee');
 
-API_URL = 'http://localhost:8000';
+API_URL = 'http://localhost:9000';
 
 document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('refresh').addEventListener('click', refresh);
   return refresh();
 });
 
+$ = function(sel) {
+  return document.querySelector(sel);
+};
+
+_el = function(id) {
+  return document.getElementById(id);
+};
+
 refresh = function() {
-  return Ajax.get({
-    url: "" + API_URL
-  }).then(function(result) {
-    return console.log(result);
+  _el('ui').classList.add('loading');
+  return generateName().then(function(name) {
+    _el('ui').classList.remove('loading');
+    _el('generated-name').innerHTML = name;
+    return _el('get-domain').value = "Register " + name + " on Gandi.net";
   });
+};
+
+generateName = function() {
+  var names;
+  names = ['machinedot.com', 'mostformal.com', 'gladplant.com'];
+  return Promise.resolve(_.sample(names));
 };
 
 

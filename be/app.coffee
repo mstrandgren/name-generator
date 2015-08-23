@@ -14,6 +14,7 @@ webServer = (app) ->
 			response.end err
 
 WebSocketServer.start {
+	cors: true
 	webServer
 	onMessage: (message) ->
 		return findAvailableNames(1)

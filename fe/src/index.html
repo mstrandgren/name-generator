@@ -11,9 +11,31 @@
 
 		<title>Most Formal Name Generator</title>
 		<script src="bower_components/lodash/lodash.js"></script>
+		<link rel="stylesheet" href="bower_components/github-fork-ribbon-css/gh-fork-ribbon.css" />
 		<link rel="stylesheet" href="style.css"/>
+
 		<script src="main.js"></script>
 	</head>
 	<body>
+		<div class="github-fork-ribbon-wrapper right">
+			<div class="github-fork-ribbon">
+				<a href="https://github.com/mstrandgren/aws-boilerplate">Fork me on GitHub</a>
+			</div>
+		</div>
+		<div id="ui">
+			<h2>Your startup's name is:</h2>
+			<h1 id="generated-name"></h1>
+			<div class="controls">
+				<form action="https://www.gandi.net/domain/buy/result/" method="POST">
+					<input type="hidden" name="domain_list" value="bagscarry.com">
+					<input type="submit" id="get-domain" value="">
+				</form>
+				<p>or</p>
+				<button id="refresh">Generate Another</button>
+			</div>
+		</div>
+		<footer>
+			A <a href="http://www.mostformal.com">Most Formal</a> plaything.
+		</footer>
 	</body>
 </html>

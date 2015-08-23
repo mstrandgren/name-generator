@@ -11,3 +11,73 @@ body {
   background: white;
   overflow: hidden;
 }
+.github-fork-ribbon {
+  background-color: black;
+}
+#ui {
+  padding: 0 5vw;
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 20vh;
+  font-family: sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+#ui h2 {
+  font-size: 1.6em;
+  font-weight: 500;
+  margin: 0;
+}
+#ui h1 {
+  font-size: 2em;
+}
+#ui p {
+  text-align: center;
+}
+#ui form {
+  display: block;
+  text-align: center;
+}
+#ui form input[type=submit] {
+  border: none;
+  font: inherit;
+  background: transparent;
+  text-decoration: underline;
+  color: #5588ff;
+}
+#ui button {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  margin: auto;
+  font: inherit;
+  font-weight: 500;
+  padding: 1em 2em;
+  background: tan;
+  border: 3px solid #A27F53;
+  border-radius: .5em;
+  cursor: pointer;
+  text-shadow: 0 1px 1px #A27F53;
+}
+#ui button:focus,
+#ui button:active {
+  outline: none;
+}
+#ui button:active {
+  text-shadow: none;
+}
+footer {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 2em;
+  padding: 0 5vw;
+  font-family: sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+@media screen and (max-height: 400px) {
+  #ui {
+    margin-top: 5vh;
+  }
+}

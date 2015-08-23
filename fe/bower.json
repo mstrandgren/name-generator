@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.0.0",
   "dependencies": {
-    "lodash": "~3.8.0"
+    "lodash": "~3.8.0",
+    "github-fork-ribbon-css": "~0.1.1"
   }
 }
