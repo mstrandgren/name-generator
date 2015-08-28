@@ -1,38 +1,44 @@
-STATIC_PATHS = [
-	'bower_components'
-	'resources'
-	'.+\.(js|css|html|ico)'
-]
-STATIC_PATHS_RE = new RegExp("^\/(#{STATIC_PATHS.join('|')})")
 
 module.exports = (grunt) ->
 	grunt.config.merge
 
 		serve:
-			template:
+			http:
 				tasks: [
-					'build:template'
-					'configureRewriteRules'
-					'connect:template'
+					'connect:http'
+					'watch'
+				]
+			https:
+				tasks: [
+					'connect:https'
 					'watch'
 				]
 
 		connect:
-			template:
+
+			http:
 				options:
-					hostname: '*'
-					port: 9001
-					base: '<%= template.build %>'
-					livereload: false
-					open: false
-					# middleware: (connect, options) ->
-					# 	[
-					# 		(req, res, next) ->
-					# 			if not STATIC_PATHS_RE.test(req.url)
-					# 				req.url = ''
-					# 			next()
-					# 		connect.static(require("path").resolve(options.base[0]))
-					# 	]
+					protocol: 'http'
+			https:
+				options:
+					protocol: 'https'
+			options:
+				hostname: '*'
+				port: 9001
+				base: '<%= paths.build %>'
+				static_paths_re: "^\/(<%= static_paths.join('|') %>)"
+				static_types_re: "\.(html|css|js|ico|<%= resource_types.join('|') %>)$"
+				livereload: false
+				open: false
+				middleware: (connect, options, middlewares) ->
+					pathRe = new RegExp(options.static_paths_re)
+					typeRe = new RegExp(options.static_types_re)
+					middlewares.unshift (req, res, next) ->
+						if not pathRe.test(req.url) and not typeRe.test(req.url)
+							console.log "#{req.url} is not static"
+							req.url = '/'
+						next()
+					return middlewares
 
 		watch:
 			coffee:
@@ -43,7 +49,7 @@ module.exports = (grunt) ->
 					'src/{,**/}*.cjsx'
 				]
 				tasks: [
-					'browserify'
+					'browserify:normal'
 					# 'cacheBust'
 					# 'manifest'
 				]
