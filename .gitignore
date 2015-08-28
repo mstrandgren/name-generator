@@ -1,3 +1,5 @@
 bower_components
 node_modules
 aws.json
+*.sublime-project
+*.sublime-workspace
