@@ -15,6 +15,7 @@ webServer = (app) ->
 
 WebSocketServer.start {
 	cors: true
+	port: 8000
 	webServer
 	onMessage: (message) ->
 		return findAvailableNames(1)

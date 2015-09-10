@@ -1,4 +1,4 @@
-
+require('es6-shim')
 connections = new Set()
 http = require('http')
 https = require('https')
