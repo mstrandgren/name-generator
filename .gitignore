@@ -1,6 +1,7 @@
 bower_components
 node_modules
 aws.json
+grunt-aws.json
 id_rsa
 *.sublime-project
 *.sublime-workspace
