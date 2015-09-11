@@ -15,7 +15,6 @@ module.exports = (grunt) ->
 				]
 
 		connect:
-
 			http:
 				options:
 					protocol: 'http'
@@ -35,7 +34,6 @@ module.exports = (grunt) ->
 					typeRe = new RegExp(options.static_types_re)
 					middlewares.unshift (req, res, next) ->
 						if not pathRe.test(req.url) and not typeRe.test(req.url)
-							console.log "#{req.url} is not static"
 							req.url = '/'
 						next()
 					return middlewares
@@ -49,7 +47,7 @@ module.exports = (grunt) ->
 					'src/{,**/}*.cjsx'
 				]
 				tasks: [
-					'browserify:normal'
+					'browserify'
 					# 'cacheBust'
 					# 'manifest'
 				]

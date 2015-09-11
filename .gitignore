@@ -4,3 +4,6 @@ aws.json
 id_rsa
 *.sublime-project
 *.sublime-workspace
+.mfstack
+server.*
+build

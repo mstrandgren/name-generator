@@ -1,33 +1,54 @@
 module.exports = (grunt) ->
-	grunt.config.merge
-		aws: grunt.file.readJSON('aws.json')
 
+	grunt.config.merge
 		deploy:
-			production:
+			app:
 				tasks: [
-					'build'
-					's3'
+					'aws_s3:app'
 				]
 
+		clean_remote:
+			app:
+				tasks: [
+					'aws_s3:clean'
+				]
 
-		s3:
+		aws: grunt.file.readJSON('grunt-aws.json')
+
+		aws_s3:
 			options:
-				key: '<%= aws.key %>'
-				secret: '<%= aws.secret %>'
+				accessKeyId: '<%= aws.key %>'
+				secretAccessKey: '<%= aws.secret %>'
 				bucket: '<%= aws.bucket %>'
 				region: '<%= aws.region %>'
 				access: 'public-read'
-				headers:
-					"Cache-Control": "max-age=#{1000*60}, public",
-					"Expires": new Date(Date.now() + 1000*60).toUTCString()
+				params:
+					CacheControl: "max-age=#{1000*60}, public",
+					Expires: new Date(Date.now() + 1000*60)
+					# ContentEncoding: 'gzip'
+				# gzip: true
+				# gzipExclude: ['.mp4', '.ogg', '.ogv', '.jpg', '.png']
+				# debug: true
+				differential: true
 
-			all:
-				upload: [
+			app:
+				files: [
 					expand: true
-					src: '<%= template.build %>/*'
-					dest: '/'
-					rel: '<%= template.build %>'
+					cwd: '<%= paths.build %>'
+					dest: '<%= paths.deploy %>'
+					src: ['**']
 				]
 
-	grunt.registerMultiTask 'deploy', 'Push app to s3', ->
+			clean:
+				files: [
+					cwd: '<%= paths.build %>'
+					dest: '<%= paths.deploy %>'
+					action: 'delete'
+					differential: true
+				]
+
+	grunt.registerMultiTask 'deploy', 'Push to s3', ->
+		grunt.task.run @data.tasks
+
+	grunt.registerMultiTask 'clean_remote', 'Delete from s3', ->
 		grunt.task.run @data.tasks

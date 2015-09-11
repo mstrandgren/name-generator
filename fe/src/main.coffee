@@ -1,5 +1,5 @@
 Ajax = require('./Ajax.coffee')
-API_URL = 'http://localhost:9000'
+API_URL = 'http://namegenerator-elb-nul5ecyxnfoz-837362908.eu-west-1.elb.amazonaws.com'
 
 document.addEventListener 'DOMContentLoaded', ->
 
@@ -22,8 +22,5 @@ refresh = ->
 
 
 generateName = ->
-	# Ajax.get(url: "#{API_URL}")
+	Ajax.get(url: "#{API_URL}")
 
-	names = ['machinedot.com', 'mostformal.com', 'gladplant.com']
-
-	Promise.resolve(_.sample(names))
