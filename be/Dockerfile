@@ -7,14 +7,7 @@ RUN npm install -g pm2
 
 WORKDIR /app
 
-RUN mkdir /root/.ssh
-ADD id_rsa /root/.ssh/id_rsa
-RUN touch /root/.ssh/known_hosts
-RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
-
-RUN git clone git@bitbucket.org:mstrandgren/name-generator.git .
-
-RUN rm -Rf /root/.ssh/id_rsa
+RUN git clone https://github.com/mstrandgren/name-generator.git .
 
 WORKDIR /app/be
 RUN npm install

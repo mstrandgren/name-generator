@@ -20,15 +20,16 @@
 	<body>
 		<div class="github-fork-ribbon-wrapper right">
 			<div class="github-fork-ribbon">
-				<a href="https://github.com/mstrandgren/aws-boilerplate">Fork me on GitHub</a>
+				<a href="https://github.com/mstrandgren/name-generator">Fork me on GitHub</a>
 			</div>
 		</div>
 		<div id="ui">
 			<h2>Your startup's name is:</h2>
 			<h1 id="generated-name"></h1>
+			<div class="spinner"></div>
 			<div class="controls">
 				<form action="https://www.gandi.net/domain/buy/result/" method="POST">
-					<input type="hidden" name="domain_list" value="bagscarry.com">
+					<input type="hidden" name="domain_list" id="domain_list">
 					<input type="submit" id="get-domain" value="">
 				</form>
 				<p>or</p>

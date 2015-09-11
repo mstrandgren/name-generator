@@ -18,6 +18,7 @@ refresh = ->
 	.then (name) ->
 		_el('ui').classList.remove('loading')
 		_el('generated-name').innerHTML = name
+		_el('domain_list').value = name
 		_el('get-domain').value = "Register #{name} on Gandi.net"
 
 

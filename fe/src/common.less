@@ -17,10 +17,42 @@ body {
 	overflow: hidden;
 }
 
+a {
+	color: @link-color;
+	&:visited {
+		color: desaturate(@link-color, 40%);
+	}
+}
 
 .github-fork-ribbon {
 	background-color: black;
+	a {
+		color: white;
+	}
 }
+
+@keyframes dots {
+	0% { content: '.'}
+	33% { content: '.'}
+	34% { content: '..'}
+	66% { content: '..'}
+	67% { content: '..'}
+	100% { content: '...'}
+}
+
+
+.spinner:before {
+	content: '...';
+	animation-name: dots;
+	animation-duration: 500ms;
+	animation-iteration-count: infinite;
+	font-size: 2em;
+	font-weight: bold;
+	color: #aaa;
+}
+
+
+
 
 #ui {
 	padding: 0 5vw;
@@ -49,6 +81,15 @@ body {
 		text-align: center;
 	}
 
+	&.loading .controls {
+		display: none;
+	}
+
+	&:not(.loading) .spinner {
+		display: none;
+	}
+
+
 	form {
 		display: block;
 		text-align: center;
@@ -58,6 +99,7 @@ body {
 			background: transparent;
 			text-decoration: underline;
 			color: @link-color;
+			cursor: pointer;
 		}
 	}
 
