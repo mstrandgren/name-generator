@@ -29,7 +29,6 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "grunt-manifest": "*",
-    "grunt-s3": "*",
     "load-grunt-tasks": "*",
     "time-grunt": "*"
   }

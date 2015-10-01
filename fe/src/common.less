@@ -1,6 +1,14 @@
 
 @link-color: #58f;
 
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+
 .hidden {
 	display: none !important;
 }
@@ -142,6 +150,13 @@ footer {
 @media screen and (max-width: 400px) {
 	body {
 		font-size: .8em;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	#ui {
+		margin: 0;
+		.center;
 	}
 }
 
