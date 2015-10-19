@@ -1,5 +1,7 @@
-Ajax = require('./Ajax.coffee')
+Ajax = require('mflib/Ajax')
+
 API_URL = 'http://namegenerator-elb-nul5ecyxnfoz-837362908.eu-west-1.elb.amazonaws.com'
+API_URL = '//localhost:8000'
 
 document.addEventListener 'DOMContentLoaded', ->
 

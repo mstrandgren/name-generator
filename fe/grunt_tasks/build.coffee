@@ -38,6 +38,8 @@ module.exports = (grunt) ->
 				files:
 					'<%= paths.build %>/app.js': ['src/main.coffee']
 				options:
+					browserifyOptions:
+						extensions: ['.coffee']
 					transform: ['coffeeify']
 
 		less:
