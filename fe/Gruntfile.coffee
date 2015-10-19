@@ -1,12 +1,14 @@
 module.exports = (grunt) ->
-	require('time-grunt')(grunt)
-
 	grunt.initConfig({})
-
-
 	require('load-grunt-tasks')(grunt)
+	require('mflib/grunt/build')(grunt)
+	require('mflib/grunt/serve')(grunt)
+	require('mflib/grunt/deploy')(grunt)
 
-	# Grunt config is in the respective apps
-	grunt.loadNpmTasks('grunt-connect-rewrite')
-	grunt.loadTasks('grunt_tasks')
+	grunt.config.merge
+		mf:
+			aws: grunt.file.readJSON('grunt-aws.json')
+			buckets:
+				production: 'namegenerator.mostformal.com'
+
 	grunt.registerTask('default', ['build'])
