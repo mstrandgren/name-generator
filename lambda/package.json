@@ -1,0 +1,31 @@
+{
+  "name": "name-generator",
+  "version": "0.0.1",
+  "author": "",
+  "bundledDependencies": [
+    "promise",
+    "lodash",
+    "whois"
+  ],
+  "dependencies": {
+    "promise": "latest",
+    "lodash": "latest",
+    "whois": "latest"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "~2.1.25",
+    "coffee-script": "1.8.0",
+    "grunt-aws-lambda": "latest",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-clean": "^0.6.x",
+    "grunt-contrib-coffee": "^0.12.x",
+    "grunt-contrib-compress": "~0.13.0",
+    "grunt-contrib-copy": "~0.8.0",
+    "grunt-text-replace": "~0.4.0",
+    "load-grunt-tasks": "^0.6.0",
+    "npm": "^3.3.12"
+  }
+}

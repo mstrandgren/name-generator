@@ -1,10 +1,12 @@
 bower_components
 node_modules
 aws.json
-grunt-aws.json
+*aws.json
+aws*.json
 id_rsa
 *.sublime-project
 *.sublime-workspace
 .mfstack
 server.*
 build
+dist
