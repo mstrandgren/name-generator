@@ -8,7 +8,7 @@ module.exports = (grunt) ->
 	grunt.config.merge
 		mf:
 			aws: grunt.file.readJSON('grunt-aws.json')
-			buckets:
+			bucket:
 				production: 'namegenerator.mostformal.com'
 
 	grunt.registerTask('default', ['build'])

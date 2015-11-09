@@ -1,6 +1,7 @@
 Ajax = require('mflib/Ajax')
 
-API_URL = 'http://namegenerator-elb-nul5ecyxnfoz-837362908.eu-west-1.elb.amazonaws.com'
+# API_URL = 'http://namegenerator-elb-nul5ecyxnfoz-837362908.eu-west-1.elb.amazonaws.com'
+API_URL = 'https://n034e12hkk.execute-api.eu-west-1.amazonaws.com/prod/namegen'
 # API_URL = '//localhost:8000'
 
 document.addEventListener 'DOMContentLoaded', ->
@@ -25,5 +26,5 @@ refresh = ->
 
 
 generateName = ->
-	Ajax.get(url: "#{API_URL}")
+	Ajax.get(url: "#{API_URL}", crossDomain: true)
 

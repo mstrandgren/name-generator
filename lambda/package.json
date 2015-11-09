@@ -5,19 +5,21 @@
   "bundledDependencies": [
     "promise",
     "lodash",
+    "coffee-script",
     "whois"
   ],
   "dependencies": {
     "promise": "latest",
     "lodash": "latest",
+    "coffee-script": "1.8.0",
     "whois": "latest"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "devDependencies": {
+    "mflib": "latest",
     "aws-sdk": "~2.1.25",
-    "coffee-script": "1.8.0",
     "grunt-aws-lambda": "latest",
     "grunt-cli": "~0.1.13",
     "grunt-contrib-clean": "^0.6.x",

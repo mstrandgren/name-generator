@@ -5,6 +5,7 @@
   "dependencies": {
     "grunt-aws-s3": "^0.14.0",
     "grunt-connect-rewrite": "^0.2.1",
+    "grunt-postcss": "^0.7.1",
     "lodash": "^3.10.1",
     "mflib": "*"
   },
@@ -12,6 +13,7 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
+    "autoprefixer": "^6.1.0",
     "bower": "*",
     "bower-config": "*",
     "coffee-react": "*",
@@ -32,6 +34,7 @@
     "grunt-contrib-watch": "*",
     "grunt-manifest": "*",
     "load-grunt-tasks": "*",
+    "postcss": "^5.0.10",
     "time-grunt": "*"
   }
 }
